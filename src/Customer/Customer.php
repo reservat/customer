@@ -77,9 +77,4 @@ class Customer implements CustomerInterface, EntityInterface
             'email' => $this->email
         ];
     }
-
-    public function getId()
-    {
-        return 1;
-    }
 }
