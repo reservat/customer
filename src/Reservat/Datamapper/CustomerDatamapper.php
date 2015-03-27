@@ -1,9 +1,9 @@
 <?php
 
-namespace Customer\Datamapper;
+namespace Reservat\Datamapper;
 
-use Customer\Interfaces\DatamapperInterface;
-use Customer\Interfaces\EntityInterface;
+use Reservat\Interfaces\DatamapperInterface;
+use Reservat\Interfaces\EntityInterface;
 
 class CustomerDatamapper implements DatamapperInterface
 {

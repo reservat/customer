@@ -1,6 +1,6 @@
 <?php 
 
-namespace Customer\Interfaces;
+namespace Reservat\Interfaces;
 
 interface DatamapperInterface
 {

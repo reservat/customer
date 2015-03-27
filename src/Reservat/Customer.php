@@ -1,9 +1,9 @@
 <?php
 
-namespace Customer;
+namespace Reservat;
 
-use Customer\Interfaces\CustomerInterface;
-use Customer\Interfaces\EntityInterface;
+use Reservat\Interfaces\CustomerInterface;
+use Reservat\Interfaces\EntityInterface;
 
 class Customer implements CustomerInterface, EntityInterface
 {

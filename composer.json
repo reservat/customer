@@ -11,7 +11,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Reservat\\Customer\\" : "src/Customer"
+            "Reservat\\" : "src/Reservat"
         }
     },
     "require-dev":{
