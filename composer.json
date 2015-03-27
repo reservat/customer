@@ -1,0 +1,18 @@
+{
+    "name": "liverbookings/customer",
+    "description": "Customer component for Liverbookings",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Steadman",
+            "email": "luke@steadweb.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Customer\\" : "src/Customer"
+        }
+    },
+    "require": {}
+}
