@@ -117,6 +117,7 @@ class CustomerDatamapper implements DatamapperInterface
      *
      * @param $query
      * @param $values
+     * @return bool
      */
     private function execute($query, array $values)
     {
@@ -124,8 +125,10 @@ class CustomerDatamapper implements DatamapperInterface
 
         if($this->db->prepare($query)->execute($values)) {
             $this->db->commit();
-        } else {
-            $this->db->rollBack();
+            return true;
         }
+
+        $this->db->rollBack();
+        return false;
     }
 }
