@@ -13,27 +13,14 @@ class CustomerDatamapper implements DatamapperInterface
     protected $db = null;
 
     /**
-     * Pass connection details through
+     * Pass an instance of PDO through
      *
-     * @param $host
-     * @param $user
-     * @param $pass
-     * @param $db
-     * @param $port
-     * @param string $charset
+     * @param \PDO $pdo
      * @throws \PDOException
      */
-    public function __construct($host, $user, $pass, $db, $port = null, $charset = 'utf8')
+    public function __construct(\PDO $pdo)
     {
-        try
-        {
-            $this->db = new \PDO('mysql:host='.$host.';dbname='.$db.';charset='.$charset, $user, $pass);
-        }
-        catch(\PDOException $e)
-        {
-            // do something but throw the exception back
-            throw $e;
-        }
+        $this->db = $pdo;
     }
 
     /**
