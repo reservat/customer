@@ -1,6 +1,6 @@
 {
-    "name": "liverbookings/customer",
-    "description": "Customer component for Liverbookings",
+    "name": "reservat/customer",
+    "description": "Customer component for Reservat",
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +11,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Customer\\" : "src/Customer"
+            "Reservat\\Customer\\" : "src/Customer"
         }
     },
     "require-dev":{
