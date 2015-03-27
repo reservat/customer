@@ -14,5 +14,8 @@
             "Customer\\" : "src/Customer"
         }
     },
+    "require-dev":{
+        "robmorgan/phinx": "0.4.*"
+    },
     "require": {}
 }
