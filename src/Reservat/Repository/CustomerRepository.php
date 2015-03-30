@@ -27,7 +27,7 @@ class CustomerRepository implements RepositoryInterface
     }
 
     /**
-     * Search an ar
+     * Search for a record by ID
      *
      * @param $id
      * @param bool $cache
