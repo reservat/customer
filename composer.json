@@ -17,5 +17,7 @@
     "require-dev":{
         "robmorgan/phinx": "0.4.*"
     },
-    "require": {}
+    "require": {
+        "reservat/core": "dev-master"
+    }
 }
