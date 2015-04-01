@@ -2,8 +2,8 @@
 
 namespace Reservat\Datamapper;
 
-use Reservat\Interfaces\DatamapperInterface;
-use Reservat\Interfaces\EntityInterface;
+use Reservat\Core\Interfaces\DatamapperInterface;
+use Reservat\Core\Interfaces\EntityInterface;
 
 class CustomerDatamapper implements DatamapperInterface
 {
