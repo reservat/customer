@@ -2,7 +2,7 @@
 
 namespace Reservat\Repository;
 
-use Reservat\Interfaces\RepositoryInterface;
+use Reservat\Core\Interfaces\RepositoryInterface;
 
 class CustomerRepository implements RepositoryInterface
 {
