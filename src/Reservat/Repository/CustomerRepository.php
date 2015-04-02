@@ -2,9 +2,9 @@
 
 namespace Reservat\Repository;
 
-use Reservat\Core\Interfaces\RepositoryInterface;
+use Reservat\Core\Interfaces\SQLRepositoryInterface;
 
-class CustomerRepository implements RepositoryInterface, \Iterator
+class CustomerRepository implements SQLRepositoryInterface, \Iterator
 {
     /**
      * @var null|\PDO
