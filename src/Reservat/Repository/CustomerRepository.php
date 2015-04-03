@@ -37,7 +37,7 @@ class CustomerRepository implements SQLRepositoryInterface
     {
         $data = $this->getAll(20, $cache);
 
-        if(array_key_exists($id, $data)) {
+        if (array_key_exists($id, $data)) {
             return $data[$id];
         }
 
@@ -53,14 +53,14 @@ class CustomerRepository implements SQLRepositoryInterface
      */
     public function getAll($limit = 20, $cache = true)
     {
-        if(!empty($this->records) && !$cache) {
+        if (!empty($this->records) && !$cache) {
             return $this->records;
         }
 
         $data = $this->query();
 
-        if($data->execute()) {
-            foreach($data->fetchAll(\PDO::FETCH_ASSOC) as $row) {
+        if ($data->execute()) {
+            foreach ($data->fetchAll(\PDO::FETCH_ASSOC) as $row) {
                 $this->records[$row['id']] = $row;
             }
         }
@@ -93,10 +93,10 @@ class CustomerRepository implements SQLRepositoryInterface
     {
         $query = 'SELECT * FROM ' . $this->table();
 
-        if(!empty($data)) {
+        if (!empty($data)) {
             $query .= ' WHERE ';
 
-            foreach($data as $column => $value) {
+            foreach ($data as $column => $value) {
                 $query .= $column . ' = ?';
             }
         }

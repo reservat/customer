@@ -18,5 +18,4 @@ class CustomerDatamapper extends PDODatamapper implements SQLDatamapperInterface
     {
         return 'customer';
     }
-
 }
