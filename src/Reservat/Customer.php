@@ -3,7 +3,7 @@
 namespace Reservat;
 
 use Reservat\Interfaces\CustomerInterface;
-use Reservat\Interfaces\EntityInterface;
+use Reservat\Core\Interfaces\EntityInterface;
 
 class Customer implements CustomerInterface, EntityInterface
 {
@@ -41,6 +41,70 @@ class Customer implements CustomerInterface, EntityInterface
         $this->surname = $surname;
         $this->telephone = $telephone;
         $this->email = $email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $forename
+     */
+    public function setForename($forename)
+    {
+        $this->forename = $forename;
+    }
+
+    /**
+     * @return string
+     */
+    public function getForename()
+    {
+        return $this->forename;
+    }
+
+    /**
+     * @param string $surname
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    /**
+     * @param string $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
     }
 
     /**
