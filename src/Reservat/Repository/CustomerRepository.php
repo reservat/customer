@@ -35,37 +35,32 @@ class CustomerRepository implements RepositoryInterface
      */
     public function getById($id, $cache = false)
     {
-        $data = $this->getAll(20, $cache);
+        $data = $this->query(array('id' => $id), 1);
 
-        if(array_key_exists($id, $data)) {
-            return $data[$id];
+        if($data->execute(array($id))) {
+            $this->records[] = $data->fetch(\PDO::FETCH_ASSOC);
         }
 
-        return null;
+        return $this;
     }
 
     /**
      * Fetch all and potentially in-house-cache the results.
      *
      * @param int $limit
-     * @param bool $cache
      * @return array
      */
-    public function getAll($limit = 20, $cache = true)
+    public function getAll($limit = 20)
     {
-        if(!empty($this->records) && !$cache) {
-            return $this->records;
-        }
-
-        $data = $this->query();
+        $data = $this->query(array(), $limit);
 
         if($data->execute()) {
             foreach($data->fetchAll(\PDO::FETCH_ASSOC) as $row) {
-                $this->records[$row['id']] = $row;
+                $this->records[] = $row;
             }
         }
 
-        return $this->records;
+        return $this;
     }
 
     /**
