@@ -135,9 +135,9 @@ class Customer implements CustomerInterface, EntityInterface
     public function toArray()
     {
         return [
-            'forename' => (string)$this->forename,
-            'surname' => (string)$this->surname,
-            'telephone' => (string)$this->telephone,
+            'forename' => $this->forename,
+            'surname' => $this->surname,
+            'telephone' => $this->telephone,
             'email' => (string)$this->email
         ];
     }
