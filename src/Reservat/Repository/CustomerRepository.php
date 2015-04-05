@@ -62,6 +62,9 @@ class CustomerRepository implements RepositoryInterface, \Iterator
     {
         $data = $this->query(array(), $limit);
 
+        // Reset the array
+        $this->records = array();
+
         if($data->execute()) {
             foreach($data->fetchAll(\PDO::FETCH_ASSOC) as $row) {
                 $this->records[] = $row;
