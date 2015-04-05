@@ -2,7 +2,4 @@
 
 namespace Reservat\Interfaces;
 
-interface RepositoryInterface extends \Reservat\Core\Interfaces\RepositoryInterface
-{
-    public function table();
-}
+interface RepositoryInterface extends \Reservat\Core\Interfaces\SQLRepositoryInterface {}

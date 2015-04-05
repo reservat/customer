@@ -326,17 +326,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reservat/core.git",
-                "reference": "a49c241c8e8bda0bb989b907e11e39f150ee52a6"
+                "reference": "74b87e3287c8d422b3dc480d4fc137a099a7a3ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reservat/core/zipball/a49c241c8e8bda0bb989b907e11e39f150ee52a6",
-                "reference": "a49c241c8e8bda0bb989b907e11e39f150ee52a6",
+                "url": "https://api.github.com/repos/reservat/core/zipball/74b87e3287c8d422b3dc480d4fc137a099a7a3ab",
+                "reference": "74b87e3287c8d422b3dc480d4fc137a099a7a3ab",
                 "shasum": ""
             },
             "require": {
                 "elasticsearch/elasticsearch": "~1.0",
-                "monolog/monolog": "~1.0"
+                "monolog/monolog": "~1.0",
+                "vlucas/phpdotenv": "~1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.5.*"
             },
             "type": "library",
             "autoload": {
@@ -359,7 +363,7 @@
                 }
             ],
             "description": "Reservat Core Interfaces",
-            "time": "2015-03-30 14:52:08"
+            "time": "2015-04-03 22:11:48"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -419,6 +423,57 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
             "time": "2015-03-13 17:50:01"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "ae388efe53a2c352ddd270f4d316bad58952b8e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/ae388efe53a2c352ddd270f4d316bad58952b8e3",
+                "reference": "ae388efe53a2c352ddd270f4d316bad58952b8e3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Dotenv": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2015-02-19 20:37:05"
         }
     ],
     "packages-dev": [
