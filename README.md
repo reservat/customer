@@ -58,6 +58,43 @@ Finally, remove the customer with the mapper
 $mapper->delete($customer, 2);
 ```
 
+## Repository
+
+The repository allows us to retrieve data stored in our persistent storage. We abide to two methods, `getById` and `getAll`.
+
+First off, create an instance of repo.
+
+```
+$repo = \Reservat\Repository\CustomerRepository($pdo);
+```
+
+Grab all the records (default limit: 20)
+
+```
+$customers = $repo->getAll();
+```
+
+This will return an instance of `\Reservat\Repository\CustomerRepository`, but implements the Iterator interface, so you can foreach over this object.
+
+```
+foreach($customers as $customer) {
+    $forename = $customer['forename'];
+    ...
+}
+```
+
+To get a single object, simply call the `getById` method, passing the ID of the record.
+
+```
+$customer = $repo->getById(1)->current();
+```
+
+`getById` also returns an instance of `\Reservat\Repository\CustomerRepository`.
+
+Using current will either return NULL (if the record is not found) or an array of the customer data.
+
+
+
 ###@todo
 
 - <del>Implement CustomerRepository</del>
