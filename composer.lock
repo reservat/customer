@@ -326,12 +326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reservat/core.git",
-                "reference": "74b87e3287c8d422b3dc480d4fc137a099a7a3ab"
+                "reference": "824021d556d5526f5f7f717d4b7eab5b3c42d30e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reservat/core/zipball/74b87e3287c8d422b3dc480d4fc137a099a7a3ab",
-                "reference": "74b87e3287c8d422b3dc480d4fc137a099a7a3ab",
+                "url": "https://api.github.com/repos/reservat/core/zipball/824021d556d5526f5f7f717d4b7eab5b3c42d30e",
+                "reference": "824021d556d5526f5f7f717d4b7eab5b3c42d30e",
                 "shasum": ""
             },
             "require": {
@@ -340,7 +340,8 @@
                 "vlucas/phpdotenv": "~1.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.5.*"
+                "phpunit/phpunit": "4.5.*",
+                "squizlabs/php_codesniffer": "2.0.*@dev"
             },
             "type": "library",
             "autoload": {
@@ -363,7 +364,7 @@
                 }
             ],
             "description": "Reservat Core Interfaces",
-            "time": "2015-04-03 22:11:48"
+            "time": "2015-04-05 13:51:50"
         },
         {
             "name": "symfony/event-dispatcher",
