@@ -28,7 +28,7 @@ class Customer implements CustomerInterface, EntityInterface
     protected $email = null;
 
     /**
-     * Customer entity holds basic information
+     * Customer entity holds basic information.
      *
      * @param $forename
      * @param $surname
@@ -108,17 +108,17 @@ class Customer implements CustomerInterface, EntityInterface
     }
 
     /**
-     * Returns the customers full name
+     * Returns the customers full name.
      *
      * @return string
      */
     public function getFullName()
     {
-        return $this->forename . ' ' . $this->surname;
+        return $this->forename.' '.$this->surname;
     }
 
     /**
-     * Return the customer telephone number
+     * Return the customer telephone number.
      *
      * @return string
      */
@@ -128,7 +128,7 @@ class Customer implements CustomerInterface, EntityInterface
     }
 
     /**
-     * Return a array of elements
+     * Return a array of elements.
      *
      * @return array
      */
@@ -138,7 +138,7 @@ class Customer implements CustomerInterface, EntityInterface
             'forename' => $this->forename,
             'surname' => $this->surname,
             'telephone' => $this->telephone,
-            'email' => (string)$this->email
+            'email' => (string) $this->email,
         ];
     }
 }
