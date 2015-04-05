@@ -2,4 +2,6 @@
 
 namespace Reservat\Interfaces;
 
-interface RepositoryInterface extends \Reservat\Core\Interfaces\SQLRepositoryInterface {}
+interface RepositoryInterface extends \Reservat\Core\Interfaces\SQLRepositoryInterface
+{
+}

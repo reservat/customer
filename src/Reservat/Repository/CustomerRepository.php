@@ -17,14 +17,14 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
     protected $records = array();
 
     /**
-     * Use for \Iterator
+     * Use for \Iterator.
      *
      * @var int
      */
     private $position = 0;
 
     /**
-     * Inject an instance of PDO
+     * Inject an instance of PDO.
      *
      * @param \PDO $db
      */
@@ -35,17 +35,16 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
     }
 
     /**
-     * Search for a record by ID
+     * Search for a record by ID.
      *
      * @param $id
      * @param bool $cache
-     * @return null
      */
     public function getById($id, $cache = false)
     {
         $data = $this->query(array('id' => $id), 1);
 
-        if($data->execute(array($id))) {
+        if ($data->execute(array($id))) {
             $this->records[] = $data->fetch(\PDO::FETCH_ASSOC);
         }
 
@@ -56,6 +55,7 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
      * Fetch all and potentially in-house-cache the results.
      *
      * @param int $limit
+     *
      * @return array
      */
     public function getAll($limit = 20)
@@ -65,8 +65,8 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
         // Reset the array
         $this->records = array();
 
-        if($data->execute()) {
-            foreach($data->fetchAll(\PDO::FETCH_ASSOC) as $row) {
+        if ($data->execute()) {
+            foreach ($data->fetchAll(\PDO::FETCH_ASSOC) as $row) {
                 $this->records[] = $row;
             }
         }
@@ -75,35 +75,37 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
     }
 
     /**
-     * Perform a PDO query
+     * Perform a PDO query.
      *
      * @param array $data
-     * @param int $limit
+     * @param int   $limit
+     *
      * @return bool
      */
     private function query($data = array(), $limit = 10)
     {
-        $query = $this->selectQuery($data) . ' LIMIT ' . intval($limit);
+        $query = $this->selectQuery($data).' LIMIT '.intval($limit);
         $db = $this->db->prepare($query);
 
         return $db;
     }
 
     /**
-     * Build a generic select query up based on an array of data
+     * Build a generic select query up based on an array of data.
      *
      * @param array $data
+     *
      * @return string
      */
     private function selectQuery(array $data)
     {
-        $query = 'SELECT * FROM ' . $this->table();
+        $query = 'SELECT * FROM '.$this->table();
 
-        if(!empty($data)) {
+        if (!empty($data)) {
             $query .= ' WHERE ';
 
-            foreach($data as $column => $value) {
-                $query .= $column . ' = ?';
+            foreach ($data as $column => $value) {
+                $query .= $column.' = ?';
             }
         }
 
@@ -111,7 +113,7 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
     }
 
     /**
-     * Return a the table name
+     * Return a the table name.
      *
      * @return string
      */
@@ -122,8 +124,10 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
-     * Return the current element
+     * Return the current element.
+     *
      * @link http://php.net/manual/en/iterator.current.php
+     *
      * @return mixed Can return any type.
      */
     public function current()
@@ -133,9 +137,9 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
-     * Move forward to next element
+     * Move forward to next element.
+     *
      * @link http://php.net/manual/en/iterator.next.php
-     * @return void Any returned value is ignored.
      */
     public function next()
     {
@@ -144,8 +148,10 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
-     * Return the key of the current element
+     * Return the key of the current element.
+     *
      * @link http://php.net/manual/en/iterator.key.php
+     *
      * @return mixed scalar on success, or null on failure.
      */
     public function key()
@@ -155,10 +161,12 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
-     * Checks if current position is valid
+     * Checks if current position is valid.
+     *
      * @link http://php.net/manual/en/iterator.valid.php
-     * @return boolean The return value will be casted to boolean and then evaluated.
-     * Returns true on success or false on failure.
+     *
+     * @return bool The return value will be casted to boolean and then evaluated.
+     *              Returns true on success or false on failure.
      */
     public function valid()
     {
@@ -167,14 +175,12 @@ class CustomerRepository implements SQLRepositoryInterface, \Iterator
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
-     * Rewind the Iterator to the first element
+     * Rewind the Iterator to the first element.
+     *
      * @link http://php.net/manual/en/iterator.rewind.php
-     * @return void Any returned value is ignored.
      */
     public function rewind()
     {
         $this->position = 0;
     }
-
-
 }
