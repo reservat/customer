@@ -15,7 +15,10 @@
         }
     },
     "require-dev":{
-        "robmorgan/phinx": "0.4.*"
+        "robmorgan/phinx": "0.4.*",
+        "phpunit/phpunit": "4.5.*"
     },
-    "require": {}
+    "require": {
+        "reservat/core": "dev-master"
+    }
 }
