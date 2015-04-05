@@ -3,7 +3,7 @@
 namespace Reservat;
 
 use Reservat\Interfaces\CustomerInterface;
-use Reservat\Interfaces\EntityInterface;
+use Reservat\Core\Interfaces\EntityInterface;
 
 class Customer implements CustomerInterface, EntityInterface
 {
