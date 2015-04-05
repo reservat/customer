@@ -2,6 +2,8 @@
 
 Customer component service for Reservat application.
 
+[![Build Status](http://test.rsrv.at:8080/buildStatus/icon?job=Customer)](http://test.rsrv.at:8080/job/Customer/)
+
 ## Basic Usage
 
 Create a new customer object
