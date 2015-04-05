@@ -57,9 +57,11 @@ class CustomerDatamapper implements DatamapperInterface
     {
         $update = function() use($entity) {
             $sql = 'UPDATE ' . $this->table() . ' SET ';
+            $sep = null;
 
             foreach($entity->toArray() as $key => $value) {
-                $sql .= $key . ' = ' . '?, ';
+                $sql .= $sep . $key . ' = ' . '?';
+                $sep = ', ';
             }
 
             $sql .= ' WHERE id = ?';
@@ -96,7 +98,7 @@ class CustomerDatamapper implements DatamapperInterface
     public function delete(EntityInterface $entity, $id)
     {
         $query = 'DELETE FROM ' . $this->table() . ' WHERE id = ?';
-        $this->execute($query, array($id));
+        $this->execute($query, array(intval($id)));
     }
 
     /**
