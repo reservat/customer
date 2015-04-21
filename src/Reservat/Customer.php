@@ -141,4 +141,9 @@ class Customer implements CustomerInterface, EntityInterface
             'email' => (string) $this->email,
         ];
     }
+
+    public static function createFromArray(array $data)
+    {
+        return new static($data['forename'], $data['surname'], $data['telephone'], $data['email']);
+    }
 }
